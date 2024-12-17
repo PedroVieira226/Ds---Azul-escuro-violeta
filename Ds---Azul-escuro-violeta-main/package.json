@@ -1,0 +1,12 @@
+{
+  "name": "uno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "JogoDeCartas.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
