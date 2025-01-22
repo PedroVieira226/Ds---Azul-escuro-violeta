@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNO</title>
+
+    <style>
+        body, html {
+            background-color: pink;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; 
+        }
+
+        .titulo {
+            margin-top: 0%;
+            width: 100%;
+            text-align: center;
+            padding-top: 5px; 
+            font-size: 6rem;
+        }
+
+        .container {
+            background-color: rgb(24, 22, 22);
+            width: 1000px;
+            height: 500px;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center; 
+            gap: 1rem; 
+            color: black;
+            padding: 4rem;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .button1 {
+            background-color: gray;
+            width: 100px; 
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 10px; 
+            cursor: pointer;
+            color: black;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: xx-large;
+        }
+        .button2 {
+            background-color: gray;
+            width: 120px; 
+            height: 100px;
+            border: none; 
+            border-radius: 10px; 
+            color: black;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        .play{
+          background-color: rgb(32, 32, 236);
+          color: white;
+          width: 400px;
+          height: 100px;
+          border-radius: 2rem;
+          font-size: xx-large;
+          margin-block-end: 10rem;
+          cursor: pointer;
+        }
+        
+        .button1:hover{
+            background-color: lightgray; 
+        }
+
+        .play:hover{
+            background-color: lightskyblue;
+        }
+
+        .nomeJogador{
+          background-color: rgb(160, 157, 157);
+          border-radius: 40px;
+          padding: 1.5rem;
+          width: 80%;
+          margin-block-end: 1rem;
+          margin-block-start: 10rem;
+          text-align: center;
+        }
+
+        .nomeJogador:focus { 
+          color: black; 
+          background-color: pink;
+          font-style: italic;
+          font-size: x-large; 
+        }
+
+        .nomeJogador:not(:focus){
+          color: black;
+          font-size: x-large;
+        }
+
+        .quantJogadores{
+          background-color: rgb(160, 157, 157);
+          border-radius: 40px;
+          padding: 3rem;
+          width: 80%;
+          margin-block-end: 1rem;
+          display: flex;
+          flex-direction: column; 
+          align-items: center; 
+          gap: 1rem;
+        }
+
+        .quantJogadores div {
+          display: flex; 
+          justify-content: center; 
+          align-items: center; 
+          gap: 1rem; 
+        }
+
+
+        .textoNumeroJ{
+          margin: 0;
+          padding-bottom: 2rem;
+          font-size: 1.5rem;
+          text-align: center;
+          font-size: 2.5rem;
+        }
+
+        ::placeholder{color: black; font-size: x-large; text-align: center;}
+
+    </style>
+</head>
+<body>
+    <h1 class="titulo">UNO</h1>
+    
+    <div class="container">
+        <input id="nomeJogador" name="nomeJogador" class="nomeJogador" type="text" placeholder="Digite seu nome...">
+        <div class="quantJogadores">
+          <h1 class="textoNumeroJ">Escolha o número de jogadores:</h1>
+          <div>
+            <button onclick="diminuirQuantJogador()" id="diminuirJogador" name="diminuirJogador" class="button1">&lt;</button>
+            <button id="contarJogador" name="contarJogador" class="button2">1</button>
+            <button onclick="aumentarQuantJogador()" id="aumentarJogador" name="aumentarJogador" class="button1">&gt;</button>
+          </div>
+          
+        </div>
+        <div>
+          <button id="play" name="play" class="play">Play</button>
+        </div>
+    </div>
+</body>
+<script>
+    var numero = 1
+    var numeroJogadores = window.document.getElementById("contarJogador")
+    function diminuirQuantJogador(){
+        if (numero > 1){ 
+          numero -= 1
+          numeroJogadores.innerText = numero} 
+    }
+    function aumentarQuantJogador(){
+      if (numero < 4){
+        numero += 1
+        numeroJogadores.innerText = numero}       
+    }
+</script>
+</html>
