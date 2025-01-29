@@ -152,21 +152,23 @@
           <h1 class="textoNumeroJ">Escolha o número de jogadores:</h1>
           <div>
             <button onclick="diminuirQuantJogador()" id="diminuirJogador" name="diminuirJogador" class="button1">&lt;</button>
-            <button id="contarJogador" name="contarJogador" class="button2">1</button>
+            <button id="contarJogador" name="contarJogador" class="button2">2</button>
             <button onclick="aumentarQuantJogador()" id="aumentarJogador" name="aumentarJogador" class="button1">&gt;</button>
           </div>
           
         </div>
         <div>
-          <button id="play" name="play" class="play">Play</button>
+          <button id="play" name="play" class="play" onclick="mudarPagina()">Play</button>
         </div>
     </div>
 </body>
 <script>
-    var numero = 1
+    var numero = 2 
     var numeroJogadores = window.document.getElementById("contarJogador")
+    var nome = document.getElementById("nomeJogador") //!
+
     function diminuirQuantJogador(){
-        if (numero > 1){ 
+        if (numero > 2){ 
           numero -= 1
           numeroJogadores.innerText = numero} 
     }
@@ -174,6 +176,10 @@
       if (numero < 4){
         numero += 1
         numeroJogadores.innerText = numero}       
+    }
+    function mudarPagina(){ //!
+      const nomeValor = nome.value; // Obtem o valor do input
+      window.location.href = `pagina2.html?numero=${encodeURIComponent(numero)}&nome=${encodeURIComponent(nomeValor)}`; //variaveis anexadas por meio da url
     }
 </script>
 </html>
