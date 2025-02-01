@@ -1,0 +1,116 @@
+
+body{
+    height: 100%;
+    margin: 0;
+}
+.home-container {
+    background-color: pink;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+  }
+  
+.titulo {
+    text-align: center;
+    font-size: 6rem;
+    margin-top: 0%;
+  }
+  
+.container {
+    background-color: rgb(24, 22, 22);
+    width: 1000px;
+    height: 500px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem;
+  }
+
+.quantJogadores div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.quantJogadores {
+    background-color: rgb(160, 157, 157);
+    border-radius: 40px;
+    padding: 3rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .textoNumeroJ {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+.button1{
+    background-color: gray;
+    width: 100px; 
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 10px; 
+    cursor: pointer;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: xx-large;
+  }
+.button2 {
+    background-color: gray;
+    width: 120px; 
+    height: 100px;
+    border: none; 
+    border-radius: 10px; 
+    color: black;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: xx-large;
+    text-align: center;
+    
+  }
+  
+.button1:hover {
+    background-color: lightgray;
+  }
+  
+.play {
+    background-color: rgb(32, 32, 236);
+    color: white;
+    width: 400px;
+    height: 100px;
+    border-radius: 2rem;
+    font-size: xx-large;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+.play:hover {
+    background-color: lightskyblue;
+    padding: 1rem;
+  }
+  
+.nomeJogador {
+    background-color: rgb(160, 157, 157);
+    border-radius: 40px;
+    padding: 1.5rem;
+    width: 90%;
+    text-align: center;
+    font-size: x-large;
+  }
+
+::placeholder{color: black; font-size: x-large; text-align: center;}
+  

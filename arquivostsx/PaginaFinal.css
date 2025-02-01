@@ -1,0 +1,105 @@
+body{
+    background-color: pink;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+.titulo {
+    text-align: center;
+    font-size: 6rem;
+    margin-top: 0%;
+    padding: 1rem;
+  }
+
+.container2 {
+    background-color: rgb(24, 22, 22);
+    width: 1200px;
+    height: 700px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    gap: 1rem; 
+    color: black;
+    padding: 7rem;
+  }
+
+.lista-resultados{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    font-size: xx-large;
+    width: 100%;
+}  
+
+.item-lista {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(167, 33, 73, 0.2);
+    width: 100% ;
+    justify-content: space-between;
+    background-color: rgb(160, 157, 157);
+    border-radius: 40px;
+    font-size: x-large;
+    margin-bottom: 1rem;
+  }
+
+.dourado{
+    color:#ffd700
+}  
+
+.prata{
+    color:#6e6f70
+}
+
+.bronze{
+    color: #6e4d25;
+}
+
+.nome-jogador {
+    font-weight: bold;
+    color: black;
+    flex-grow: 1;
+  }
+  
+.cartas-restantes {
+    color: black;
+  }
+  
+.botao-reiniciar {
+    background-color: rgb(32, 32, 236);
+    color: white;
+    width: 400px;
+    height: 100px;
+    border-radius: 2rem;
+    font-size: xx-large;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+.botao-reiniciar:hover {
+    background-color: #2980b9;
+    padding: 0.95rem;
+}
+
+.posicao {
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 50px; 
+    text-align: center;
+    margin-right: 1rem;
+}
+.medalha {
+    width: 24px; 
+    height: 24px;
+    vertical-align: middle; 
+  }
