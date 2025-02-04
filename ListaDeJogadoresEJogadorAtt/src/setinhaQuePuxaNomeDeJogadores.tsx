@@ -24,16 +24,14 @@ function ListaJogadores() {
         setTurnoAtual((turnoAtual + 1) % players.length);
     };
 
-    const getJogadorAtual = () => players[turnoAtual];
-
     return (
-        <div style={{ position: "relative" }}>
+        <div>
             <button
                 onClick={alternar}
                 style={{
                     position: "fixed",
-                    top: "10px",
-                    left: "10px",
+                    bottom: "20px",
+                    left: "20px",
                     fontSize: "30px",
                     backgroundColor: "#007BFF",
                     color: "white",
@@ -42,7 +40,6 @@ function ListaJogadores() {
                     padding: "10px",
                     cursor: "pointer",
                     zIndex: 10,
-                    transition: "left 0.3s ease",
                 }}
             >
                 ☰
@@ -52,26 +49,26 @@ function ListaJogadores() {
                 <div
                     style={{
                         position: "fixed",
-                        top: "0",
-                        left: "0",
+                        bottom: "70px",
+                        left: "20px",
                         width: "250px",
-                        height: "200px",
                         backgroundColor: "#f1f1f1",
                         boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)",
                         padding: "20px",
                         overflowY: "auto",
                         zIndex: 5,
+                        borderRadius: "10px",
                     }}
                 >
-                    <h1 style={{ textAlign: "center" }}>Lista de Jogadores</h1>
+                    <h1 style={{ textAlign: "center", fontSize: "16px" }}>Lista de Jogadores</h1>
                     <ul style={{ listStyle: "none", padding: 0 }}>
                         {players.map((player, index) => (
-                            <li key={player.id} style={{ display: "flex", alignItems: "center" }}>
+                            <li key={player.id} style={{ display: "flex", alignItems: "center", marginBottom: "5px" }}>
                                 {index === turnoAtual && (
                                     <span
                                         style={{
-                                            width: "15px",
-                                            height: "15px",
+                                            width: "10px",
+                                            height: "10px",
                                             backgroundColor: "green",
                                             borderRadius: "50%",
                                             marginRight: "10px",
@@ -85,16 +82,14 @@ function ListaJogadores() {
                     <button
                         onClick={avancarTurno}
                         style={{
-                            position: "absolute",
-                            bottom: "10px",
-                            left: "50%",
-                            transform: "translateX(-50%)",
+                            width: "100%",
                             backgroundColor: "#007BFF",
                             color: "white",
                             border: "none",
-                            padding: "10px 20px",
+                            padding: "10px",
                             borderRadius: "5px",
                             cursor: "pointer",
+                            marginTop: "10px",
                         }}
                     >
                         Avançar Turno
