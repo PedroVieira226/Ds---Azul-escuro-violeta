@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados</title>
+  <style>
+    body {
+      background-color: pink;
+      height: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .titulo {
+      text-align: center;
+      font-size: 6rem;
+      margin-top: 0%;
+      padding: 1rem;
+    }
+
+    .container2 {
+      background-color: rgb(24, 22, 22);
+      width: 1000px;
+      height: 500px;
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: black;
+      padding: 5rem;
+    }
+
+    .lista-resultados {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+      font-size: xx-large;
+      width: 100%;
+    }
+
+    .item-lista {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 40px;
+      box-shadow: 0 2px 4px rgba(167, 33, 73, 0.2);
+      width: 100%;
+      background-color: rgb(160, 157, 157);
+      font-size: x-large;
+      margin-bottom: 1rem;
+    }
+
+    /* Estilo para os jogadores a partir do 4º lugar */
+    .item-lista.subnivel {
+      background-color: #a0a0a0;
+    }
+
+    .posicao-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+      width: 120px;
+    }
+
+    .posicao {
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: right;
+      width: 50px;
+    }
+
+    .medalha {
+      font-size: 1.8rem;
+      width: 30px;
+      text-align: center;
+    }
+
+    .nome-jogador {
+      font-weight: bold;
+      color: black;
+      flex-grow: 1;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .cartas-restantes {
+      color: black;
+      width: 200px;
+      text-align: right;
+    }
+
+    .botao-reiniciar {
+      background-color: rgb(32, 32, 236);
+      color: white;
+      width: 400px;
+      height: 100px;
+      border-radius: 2rem;
+      font-size: xx-large;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .botao-reiniciar:hover {
+      background-color: #2980b9;
+      padding: 0.95rem;
+    }
+
+    .dourado {
+      color: #ffd700;
+    }
+
+    .prata {
+      color: #6e6f70;
+    }
+
+    .bronze {
+      color: #6e4d25;
+    }
+  </style>
+</head>
+<body>
+  <div class="pagina-final">
+    <h1 class="titulo">Resultados</h1>
+
+    <div class="container2">
+      <ul class="lista-resultados" id="lista-resultados"></ul>
+
+      <button class="botao-reiniciar" onclick="reiniciarJogo()">Jogar Novamente</button>
+    </div>
+  </div>
+
+  <script>
+    const jogadores = [
+      { nome: "Jogador 1", cartasRestantes: 5 },
+      { nome: "Jogador 2", cartasRestantes: 2 },
+      { nome: "Jogador 3", cartasRestantes: 7 },
+      { nome: "Jogador 4", cartasRestantes: 8 },
+      { nome: "Jogador 5", cartasRestantes: 9 },
+      { nome: "Jogador 6", cartasRestantes: 1 },
+    ].sort((a, b) => a.cartasRestantes - b.cartasRestantes); 
+
+    function gerarListaResultados() {
+      const lista = document.getElementById("lista-resultados");
+      lista.innerHTML = "";
+
+      jogadores.forEach((jogador, index) => {
+        const li = document.createElement("li");
+        li.className = `item-lista ${index >= 3 ? 'subnivel' : ''}`;
+
+        let medalha = "";
+        if (index === 0) medalha = "🥇";
+        else if (index === 1) medalha = "🥈";
+        else if (index === 2) medalha = "🥉";
+
+        let cor = "";
+        if (index === 0) cor = "dourado";
+        else if (index === 1) cor = "prata";
+        else if (index === 2) cor = "bronze";
+
+        li.innerHTML = `
+          <div class="posicao-container">
+            <span class="medalha">${medalha}</span>
+            <span class="posicao ${cor}">${index + 1}º</span>
+          </div>
+          <span class="nome-jogador">${jogador.nome}</span>
+          <span class="cartas-restantes">${jogador.cartasRestantes} carta${jogador.cartasRestantes !== 1 ? 's' : ''} restante${jogador.cartasRestantes !== 1 ? 's' : ''}</span>
+        `;
+
+        lista.appendChild(li);
+      });
+    }
+
+    function reiniciarJogo() {
+      window.location.href = "/";
+    }
+
+    window.onload = gerarListaResultados;
+  </script>
+</body>
+</html>
